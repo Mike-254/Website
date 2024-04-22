@@ -13,15 +13,15 @@
 
         <nav>
             <ul>
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="Index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="#">Music</a></li>
                 <li><a href="#">Contact</a></li>
                  <li><a href="#" id="loginBtn">Login</a></li>
     
             </ul>
     
-    
+           
         </nav>
         
 
@@ -45,6 +45,7 @@
             </form>
         </div>
 
+        
 
 
    <!-- Search Section -->
@@ -83,15 +84,30 @@
         </div>
     </div>
 
-   
+    <div class="notification">
+        <button id="notificationBtn">New Songs</button>
+        <span class="badge" id="notificationBadge">0</span>
+    </div>
 
 
 
 
+
+    <div class="music-player">
+        <button id="previousButton">Previous</button>
+        <button id="playButton">Play</button>
+        <button id="nextButton">Next</button>
+    </div>
+    <div class="content">
+        <h2>Events and Concerts</h2>
+        <div id="eventsList">
+            <!-- Events and concerts will be displayed here -->
+        </div>
+    </div>
 
 
     <footer>
-        <p>&copy; 2024 My Music Website. All rights reserved.</p>
+        
     </footer>
 
     <script src="script.js"></script>

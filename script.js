@@ -176,3 +176,86 @@ function showProfile() {
         <p><strong>Email:</strong> ${userData.email}</p>
     `;
 }
+// Sample notification count (replace with actual notification count)
+var notificationCount = 5; // Example: 5 new songs
+
+// Update notification badge count
+document.getElementById("notificationBadge").textContent = notificationCount;
+
+// Add event listener for notification button click
+document.getElementById("notificationBtn").addEventListener("click", function() {
+    // Handle notification click event
+    alert("You have " + notificationCount + " new songs!");
+});
+// Sample music data (replace with actual music data)
+var musicData = [
+    { title: "Song 1", artist: "Artist 1" },
+    { title: "Song 2", artist: "Artist 2" },
+    { title: "Song 3", artist: "Artist 3" }
+];
+
+var currentSongIndex = 0; // Index of the currently playing song
+
+// Function to play the current song
+function playSong() {
+    var currentSong = musicData[currentSongIndex];
+    alert("Playing: " + currentSong.title + " - " + currentSong.artist);
+}
+
+// Add event listener for play button click
+document.getElementById("playButton").addEventListener("click", playSong);
+
+// Function to play the next song
+function nextSong() {
+    currentSongIndex = (currentSongIndex + 1) % musicData.length; // Wrap around to the beginning if at the end
+    playSong();
+}
+
+// Add event listener for next button click
+document.getElementById("nextButton").addEventListener("click", nextSong);
+
+// Function to play the previous song
+function previousSong() {
+    currentSongIndex = (currentSongIndex - 1 + musicData.length) % musicData.length; // Wrap around to the end if at the beginning
+    playSong();
+}
+
+// Add event listener for previous button click
+document.getElementById("previousButton").addEventListener("click", previousSong);
+// Sample events data (replace with actual events data)
+var eventsData = [
+    { title: "Concert: Artist 1", date: "2024-04-25", venue: "Venue A", location: "City A" },
+    { title: "Festival: Artist 2", date: "2024-05-10", venue: "Venue B", location: "City B" },
+    { title: "Live Performance: Artist 3", date: "2024-06-15", venue: "Venue C", location: "City C" },
+    // Add more events as needed
+];
+
+// Function to display events
+function displayEvents() {
+    var eventsList = document.getElementById("eventsList");
+    eventsList.innerHTML = ""; // Clear previous content
+
+    eventsData.forEach(function(eventItem) {
+        var itemDiv = document.createElement("div");
+        itemDiv.classList.add("event-item");
+        itemDiv.innerHTML = `
+            <strong>${eventItem.title}</strong><br>
+            <span><strong>Date:</strong> ${eventItem.date}</span><br>
+            <span><strong>Venue:</strong> ${eventItem.venue}</span><br>
+            <span><strong>Location:</strong> ${eventItem.location}</span>
+        `;
+        eventsList.appendChild(itemDiv);
+    });
+}
+
+// Call the displayEvents function when the page loads
+window.onload = function() {
+    displayEvents();
+};
+
+
+
+
+
+
+
