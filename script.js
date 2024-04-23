@@ -254,6 +254,53 @@ window.onload = function() {
 };
 
 
+// Array to store playlist songs
+var playlist = [];
+
+// Function to add a song to the playlist
+function addSong() {
+    var songName = prompt("Enter the name of the song:");
+    if (songName) {
+        playlist.push(songName);
+        displayPlaylist();
+    }
+}
+
+// Function to create the playlist
+function createPlaylist() {
+    var playlistName = document.getElementById("playlistName").value.trim();
+    if (playlistName === "") {
+        alert("Please enter a playlist name.");
+        return;
+    }
+
+    if (playlist.length === 0) {
+        alert("Please add songs to the playlist.");
+        return;
+    }
+
+    // Optionally, you can perform further actions like saving the playlist to a database or API
+    alert("Playlist created successfully: " + playlistName + "\nSongs: " + playlist.join(", "));
+    // Clear playlist
+    playlist = [];
+    displayPlaylist();
+}
+
+// Function to display the playlist
+function displayPlaylist() {
+    var playlistSongs = document.getElementById("playlistSongs");
+    playlistSongs.innerHTML = ""; // Clear previous playlist
+
+    playlist.forEach(function(song, index) {
+        var listItem = document.createElement("div");
+        listItem.textContent = (index + 1) + ". " + song;
+        playlistSongs.appendChild(listItem);
+    });
+}
+
+// Event listeners
+document.getElementById("addSongButton").addEventListener("click", addSong);
+document.getElementById("createPlaylistButton").addEventListener("click", createPlaylist);
 
 
 

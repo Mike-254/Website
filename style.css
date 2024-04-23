@@ -282,6 +282,36 @@ footer {
 
 
 
+/* Previous styles remain unchanged */
+
+#playlistForm {
+  margin-bottom: 20px;
+}
+
+#playlistForm input[type="text"] {
+  padding: 8px;
+  width: 300px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#playlistForm button {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff; /* Bootstrap primary color */
+  color: #fff;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+#playlistForm button:hover {
+  background-color: #0056b3; /* Darker blue color on hover */
+}
+
+#playlistSongs {
+  margin-top: 20px;
+}
 
 
 
